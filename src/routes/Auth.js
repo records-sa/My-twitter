@@ -1,13 +1,17 @@
-import { authService, firebaseInstance } from "fbase";
+import {
+  auth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "fbase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "firebase";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(true);
   const [error, setError] = useState("");
+  const [userData, setUserData] = useState(null);
 
   const onChange = (event) => {
     const {
@@ -19,19 +23,17 @@ const Auth = () => {
       setPassword(value);
     }
   };
+
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
       let data;
       if (newAccount) {
         // create account
-        data = await authService.createUserWithEmailAndPassword(
-          email,
-          password
-        );
+        data = await createUserWithEmailAndPassword(auth, email, password);
       } else {
         // log in
-        data = await authService.signInWithEmailAndPassword(email, password);
+        data = await signInWithEmailAndPassword(auth, email, password);
       }
       console.log(data);
     } catch (error) {
@@ -40,16 +42,22 @@ const Auth = () => {
   };
 
   const toggleAccount = () => setNewAccount((prev) => !prev);
+
   const onSocialClick = async (event) => {
     const {
       target: { name },
     } = event;
-    let provider;
-    if (name === "google") {
-      // Google Authentication
-      provider = new firebaseInstance.auth.GoogleAuthProvider();
-    }
-    const data = await authService.signInWithPopup(provider);
+    const provider = new GoogleAuthProvider();
+    // }
+    signInWithPopup(auth, provider)
+      .then((data) => {
+        console.log(data);
+        setUserData(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // const data = await authService.signInWithPopup(provider);
   };
   return (
     <div>
