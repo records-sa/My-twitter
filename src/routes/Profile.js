@@ -1,4 +1,12 @@
+import { authService } from "fbase";
 import React from "react";
 
-const EditProfile = () => <span>Profile</span>;
+const EditProfile = () => {
+  const onLogOutClick = () => authService.signOut();
+  return (
+    <>
+      <button onClick={onLogOutClick}>Log Out</button>
+    </>
+  );
+};
 export default EditProfile;
