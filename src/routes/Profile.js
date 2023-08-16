@@ -3,7 +3,10 @@ import React, { useState } from "react";
 
 const EditProfile = ({ refreshUser, userObj }) => {
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
-  const onLogOutClick = () => authService.signOut();
+  const onLogOutClick = () => {
+    authService.signOut();
+    refreshUser();
+  };
 
   const getMyTweets = async () => {
     const tweets = await dbService
