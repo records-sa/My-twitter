@@ -31,28 +31,24 @@ const Tweet = ({ tweetObj, isOwner }) => {
   };
 
   return (
-    <div className="nweet">
+    <div className="tweet">
       {editing ? (
         <>
-          {isOwner && (
-            <>
-              <form onSubmit={onSubmit} className="container tweetEdit">
-                <input
-                  type="text"
-                  placeholder="Edit your tweet"
-                  value={newTweet}
-                  required
-                  onChange={onChange}
-                  autoFocus
-                  className="formInput"
-                />
-                <input type="submit" value="Update Tweet" className="formBtn" />
-              </form>
-              <span onClick={toggleEditing} className="formBtn cancelBtn">
-                Cancel
-              </span>
-            </>
-          )}
+          <form onSubmit={onSubmit} className="container tweetEdit">
+            <input
+              type="text"
+              placeholder="Edit your tweet"
+              value={newTweet}
+              required
+              onChange={onChange}
+              autoFocus
+              className="formInput"
+            />
+            <input type="submit" value="Update Tweet" className="formBtn" />
+          </form>
+          <span onClick={toggleEditing} className="formBtn cancelBtn">
+            Cancel
+          </span>
         </>
       ) : (
         <>

@@ -32,7 +32,7 @@ form {
   width: 100%;
 }
 
-.nweet-input::placeholder {
+.tweet-input::placeholder {
   color: white;
   opacity: 0.9;
 }
@@ -93,7 +93,7 @@ form {
   width: 100%;
 }
 
-.factoryInput__container {
+.factoryInput_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,7 +103,7 @@ form {
   width: 100%;
 }
 
-.factoryInput__input {
+.factoryInput_input {
   flex-grow: 1;
   height: 40px;
   padding: 0px 20px;
@@ -114,7 +114,7 @@ form {
   font-size: 12px;
 }
 
-.factoryInput__arrow {
+.factoryInput_arrow {
   position: absolute;
   right: 0;
   background-color: #04aaff;
@@ -126,48 +126,48 @@ form {
   color: white;
 }
 
-.factoryInput__label {
+.factoryInput_label {
   color: #04aaff;
   cursor: pointer;
 }
 
-.factoryInput__label span {
+.factoryInput_label span {
   margin-right: 10px;
   font-size: 12px;
 }
 
-.factoryForm__attachment {
+.factoryForm_attachment {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.factoryForm__attachment img {
+.factoryForm_attachment img {
   height: 80px;
   width: 80px;
   border-radius: 40px;
 }
 
-.factoryForm__clear {
+.factoryForm_clear {
   color: #04aaff;
   cursor: pointer;
   text-align: center;
 }
 
-.factoryForm__clear span {
+.factoryForm_clear span {
   margin-right: 10px;
   font-size: 12px;
 }
 
 /* Nweet */
 
-.nweetEdit .formBtn {
+.tweetEdit .formBtn {
   cursor: pointer;
   margin-top: 15px;
   margin-bottom: 5px;
 }
 
-.nweet {
+.tweet {
   margin-bottom: 20px;
   background-color: white;
   width: 100%;
@@ -180,11 +180,11 @@ form {
   color: rgba(0, 0, 0, 0.8);
 }
 
-.nweet h4 {
+.tweet h4 {
   font-size: 14px;
 }
 
-.nweet img {
+.tweet img {
   right: -10px;
   top: 20px;
   position: absolute;
@@ -194,17 +194,17 @@ form {
   margin-top: 10px;
 }
 
-.nweet__actions {
+.tweet_actions {
   position: absolute;
   right: 10px;
   top: 10px;
 }
 
-.nweet__actions span {
+.tweet_actions span {
   cursor: pointer;
 }
 
-.nweet__actions span:first-child {
+.tweet_actions span:first-child {
   margin-right: 10px;
 }
 
